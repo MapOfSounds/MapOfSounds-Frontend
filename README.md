@@ -40,13 +40,11 @@ User ─→ GitHub Pages (this repo)
            │  fetch /config (Mapbox token)
            │  fetch /list, /upload, /search ...
            ▼
-        Cloudflare Worker  ← MapOfSounds-Worker repo
+        Backend Server
            │
            ▼
-        Cloudflare R2 (audio files + metadata)
+        Database
 ```
-
-**Key change in v2:** The Mapbox access token is stored as a **Cloudflare Worker secret** and served via `GET /config`. The frontend fetches it at startup — **no tokens in source code**.
 
 ---
 
@@ -57,7 +55,7 @@ MapOfSounds/
 ├── index.html          ← SPA shell (all pages)
 ├── css/style.css       ← Dark/light theme, responsive design
 ├── js/
-│   ├── config.js       ← Runtime config (token fetched from Worker)
+│   ├── config.js       ← Runtime config (token fetched from Backend)
 │   ├── api.js          ← API client + localStorage fallback
 │   ├── app.js          ← Main controller, routing, theme, keyboard
 │   ├── map.js          ← Mapbox globe map, markers, popups
