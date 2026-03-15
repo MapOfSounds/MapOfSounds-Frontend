@@ -9,8 +9,7 @@ const CONFIG = {
   // Mapbox token — populated at runtime via fetchConfig()
   MAPBOX_TOKEN: null,
 
-  // Cloudflare Worker API URL — replace after deploying worker
-  API_URL: 'https://soundmap-api.rukkit.workers.dev',
+  API_URL: 'something.com',
 
   // Site URL for sharing/QR
   SITE_URL: 'https://mapofsounds.github.io',
